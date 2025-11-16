@@ -1,0 +1,24 @@
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.book-table th,
+.book-table td {
+  border: 1px solid #a3d616;
+  padding: 8px;
+  text-align: left;
+}
+
+.book-table th {
+  background-color: #90d412;
+}
+
+.btbgcolor{
+   background-color: blue;
+}
+
+.btbgcolordelete{
+   background-color: red
+}
