@@ -42,3 +42,5 @@ jobs:
           app_location: "/"        # root folder of your repo
           api_location: ""         # leave empty if no API
           output_location: "dist"  # production build folder (Vite outputs here)
+          skip_deploy_on_missing_secrets: true
+
