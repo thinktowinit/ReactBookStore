@@ -13,29 +13,32 @@ jobs:
   build_and_deploy_job:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+
     steps:
+      # 1️⃣ Checkout your repository
       - uses: actions/checkout@v3
 
+      # 2️⃣ Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # match your project node version
+          node-version: '18'  # match your project Node version
 
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # 4️⃣ Build your React app
       - name: Build React app
         run: npm run build
 
+      # 5️⃣ Deploy to Azure Static Web App
       - name: Deploy to Azure Static Web App
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: "a60ef4ecac93b41a7f6fcf8ef5601b97e31952ff9617cece802481919077fb7302-34adace8-0fbe-42c3-8d89-b60629120a8b0030532016828203"
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}  # must be set in GitHub secrets
+          repo_token: ${{ secrets.GITHUB_TOKEN }}  # automatically provided by GitHub
           action: "upload"
-          app_location: "/"        # root of repo
-          api_location: ""         # empty if no API
-          output_location: "dist"  # folder with production build
-
-
-
-
+          app_location: "/"        # root folder of your repo
+          api_location: ""         # leave empty if no API
+          output_location: "dist"  # production build folder (Vite outputs here)
