@@ -36,5 +36,5 @@ jobs:
           app_location: "/"        # root of repo
           api_location: ""         # empty if no API
           output_location: "dist"  # folder with production build
-          skip_deploy_on_missing_secrets: true
+
 
