@@ -25,7 +25,7 @@ console.log("from books comp===========");
               <td>{book.id}</td>
               <td>{book.name}</td>
               <td>{book.author}</td>
-              <td>{book.publication}</td>
+              <td></td>
               <td>{book.category}</td>
               <td>{book.pages}</td>
               <td>{book.price}</td>

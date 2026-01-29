@@ -2,11 +2,8 @@
 import { BASE_URL } from './Constants';
 
 export async function fetchBooks() {
-   alert("fetchBooks");
    console.log("BASE_URL==");
    console.log(BASE_URL);
-   alert("BASE_URL==");
-   alert(BASE_URL);
   const response = await fetch(BASE_URL);
 
   if (!response.ok) {

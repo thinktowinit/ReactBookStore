@@ -4,7 +4,6 @@ import { uiActions } from './ui-slice';
 import { fetchBooks, deleteBook, createBook, updateBook } from '../Components/HttpRequest';
 
 export const fetchBookData = () => {
-  alert("fetchBookData");
   return async (dispatch) => {
     dispatch(uiActions.showNotification({
       status: 'pending',

@@ -32,7 +32,7 @@ const dispatch = useDispatch();
 
 //below is without redux thunk
   async function getAllBooks() {
-    alert("getAllBooks"+HTTP_REQUEST_API_TYPE);
+   console.log("getAllBooks"+HTTP_REQUEST_API_TYPE);
     try {
       var data = undefined;
       console.log(HTTP_REQUEST_API_TYPE);
@@ -50,7 +50,7 @@ const dispatch = useDispatch();
 
   //below is with redux thunk
  useEffect(() => {
-  alert("===");
+ console.log("===");
   dispatch(fetchBookData()); //with redux thunk
 }, [dispatch]); // [], Elint
 
@@ -69,7 +69,7 @@ const dispatch = useDispatch();
       setBookToDelete(null);
       getAllBooks();
     } catch (err) {
-      alert("Failed to delete book: " + err.message);
+    console.log("Failed to delete book: " + err.message);
     }
   }
 
@@ -130,7 +130,7 @@ const dispatch = useDispatch();
       setEditBook(null);
       getAllBooks();
     } catch (error) {
-      alert('Error saving book: ' + error.message);
+      console.log("error");
     }
   }
 
